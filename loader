@@ -1,0 +1,34 @@
+local game_detected = false
+local list_of_games = {
+    ['0'] = "none"
+}
+
+for i, v in pairs(list_of_games) do
+    if tonumber(i) == game.PlaceId then
+        loadstring(game:HttpGet(v))()
+        game_detected = true
+        break
+    end
+end
+
+local LoadingNukeXScriptLel = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+LoadingNukeXScriptLel.Name = "LoadingOrixonScriptLel"
+LoadingNukeXScriptLel.Parent = game.CoreGui
+LoadingNukeXScriptLel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = LoadingNukeXScriptLel
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0, 1918, 0, 50)
+TextLabel.Font = Enum.Font.GothamBold
+if game_detected == true then
+TextLabel.Text = "Nuke-X is loading. Please wait this might take some time you will not crash(if ur executor isnt shit) be patient"
+else
+TextLabel.Text = "Game is not detected please join https://discord.gg/KEbVErTcRZ and ask the Golden Fire if you want a new script"
+end
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 24.000
+wait(4)
+LoadingNukeXScriptLel:Destroy()
